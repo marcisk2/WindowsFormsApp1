@@ -8,6 +8,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace WindowsFormsApp1
 {
@@ -17,6 +18,8 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
+            groupBox1.Hide();
+            groupBox2.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -89,6 +92,47 @@ namespace WindowsFormsApp1
 
         private void button8_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            double r = double.Parse(textBox15.Text);
+            double S;
+            S = Math.PI * r * r;
+            label20.Text = "S=" + S.ToString("F2");
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            double a = double.Parse(textBox14.Text);
+            double b = double.Parse(textBox13.Text);
+            double S;
+            S = a * b;
+            label17.Text = "S=" + S.ToString("F2");
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            groupBox1.Hide();
+            groupBox2.Hide();
+            if (comboBox1.Text == "Taisnstūris")
+                groupBox1.Show();
+            else if (comboBox1.Text == "Aplis")
+                groupBox2.Show();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            foreach (Control c in Form1.ActiveForm.Controls)
+                c.Left += 20;
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            foreach (Control c in Form1.ActiveForm.Controls)
+                c.Left -= 20;
 
         }
 
